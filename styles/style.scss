@@ -167,7 +167,7 @@ header {
         padding-left: 55px;
     }
     &__text {
-        margin-top: 53px;
+        margin-top: 43px;
     }
 }
 
@@ -200,6 +200,11 @@ header {
     &__text {
         margin-bottom: 82px;
     }
+    &__name {
+        font-family: Lato;
+        font-style: italic;
+
+    }
 }
 
 // ---------- Lastest News section begins ---------- //
@@ -220,11 +225,17 @@ header {
         }
     }
     &__subHeading {
-        margin-top: 27px;
+        margin-top: 20px;
     }
     &__link {
-        margin-top: 24px;
+        margin-top: 10px;
         color:  #285d64;
+        @include flex(auto, auto, center);
+    }
+    &__icon {
+        font-size: 2rem;
+        margin-left: 10px;
+        padding-bottom: 3px;
     }
 }
 

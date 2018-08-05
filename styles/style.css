@@ -153,11 +153,13 @@ h3 {
 
 h4 {
   font-size: 2rem;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  line-height: 1.634; }
 
 p {
   font-size: 2.4rem;
-  font-family: 'Lato', sans-serif; }
+  font-family: 'Lato', sans-serif;
+  line-height: 1.583; }
 
 a {
   text-decoration: none;
@@ -376,7 +378,7 @@ header {
     width: 60%;
     padding-left: 55px; }
   .testimonial__text {
-    margin-top: 53px; }
+    margin-top: 43px; }
 
 .sampleShoots {
   display: -webkit-box;
@@ -410,6 +412,9 @@ header {
       left: auto; }
   .clients__text {
     margin-bottom: 82px; }
+  .clients__name {
+    font-family: Lato;
+    font-style: italic; }
 
 .latestNews {
   background-color: #f5f3f3;
@@ -426,10 +431,29 @@ header {
     .latestNews__item:nth-child(2) {
       margin: 0 30px; }
   .latestNews__subHeading {
-    margin-top: 27px; }
+    margin-top: 20px; }
   .latestNews__link {
-    margin-top: 24px;
-    color: #285d64; }
+    margin-top: 10px;
+    color: #285d64;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: auto;
+    flex-direction: auto;
+    -webkit-box-pack: auto;
+    -ms-flex-pack: auto;
+    justify-content: auto;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: auto;
+    flex-wrap: auto; }
+  .latestNews__icon {
+    font-size: 2rem;
+    margin-left: 10px;
+    padding-bottom: 3px; }
 
 .askQuestion {
   background-color: #f2b094;
