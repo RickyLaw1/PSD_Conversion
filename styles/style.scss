@@ -22,9 +22,14 @@ html {
         padding: 0 $xPadding;
     }
 }
-@media (max-width: 1139px) {
+@media (max-width: 720px) {
     .wrapper {
-        padding: 0 30px;
+        padding: 0 60px;
+    }
+}
+@media (max-width: 526px) {
+    .wrapper {
+        padding: 0 20px;
     }
 }
 
@@ -73,7 +78,6 @@ img {
 @media (max-width: 900px) {
     .navigation {
         &__icon {
-            height: 45px;
             position: absolute;
             &:last-child {
                 right: -45px;
@@ -82,21 +86,13 @@ img {
             }
         }
         &__menu {
+            @include position(absolute, 15px, $xPadding);
             display: block;
-            position: absolute;
-            top: 15px;
-            right: $xPadding;
             font-size: 35px;            
             &:hover .navigation__icon:first-child {
                 transition: 0.3s;
                 color: red;
             }
-        }
-        &__text {
-            transition: 0.3s;
-        }
-        &__list--rightAlign {
-            display: none;
         }
         &__list--small {
             padding: 0;
@@ -108,37 +104,32 @@ img {
             width: 100%;
         }
     }
-    input#navMenu[type="checkbox"] {
-         & ~ .navigation__list {
-                display: block;
-                position: absolute;
-                right: 0;
-                top: 100px;
-                padding-left: 0;
-                overflow: hidden;
-            & .navigation__text {
-                transition: 0.5s;
-                position: relative;
-                left: -200px;
-            }
-        }
-    }
-    input#navMenu:checked {
-        & ~ .navigation {
-            &__list {
+    input#navMenu {
+        &[type="checkbox"] {
+            & ~ .navigation__list {
+                    @include position(absolute, 100px, 0);
+                    display: block;
+                    padding-left: 0;
+                    overflow: hidden;
                 & .navigation__text {
-                    left: 0;
+                    transition: 0.5s;
+                    @include position(relative, auto, auto, auto, -200px);
                 }
             }
         }
-        & ~ .navigation__menu .navigation__icon {
-            transition: transform 1s;
-            &:first-child {
-                color: red;
-                transform: translateX(-14px) rotateY(90deg);
+        &:checked ~ .navigation {
+            &__list .navigation__text {
+                left: 0;
             }
-            &:last-child {
-                transform: translateX(-14px) rotateY(0deg);
+            &__menu .navigation__icon {
+                transition: transform 1s;
+                &:first-child {
+                    color: red;
+                    transform: translateX(-14px) rotateY(90deg);
+                }
+                &:last-child {
+                    transform: translateX(-14px) rotateY(0deg);
+                }
             }
         }
     }
@@ -391,6 +382,11 @@ header {
         width: 50%;
     }
 }
+@media (max-width: 526px) {
+      .sampleShoots__figure {
+        width: 100%;
+    }
+}
 
 
 // ---------- Clients section begins ---------- //
@@ -420,6 +416,11 @@ header {
     }
     &__name {
         font-style: italic;
+    }
+}
+@media (max-width: 526px) {
+    .clients__text {
+        margin: auto 0;
     }
 }
 
@@ -458,8 +459,8 @@ header {
     .latestNews {
         text-align: center;
         &__list {
-            padding: 78px 0;
             @include flex(column, auto, center, wrap);
+            padding: 78px 0;
         }
         &__item {
             width: 60%;
@@ -471,7 +472,13 @@ header {
         }
     }
 }
-
+@media (max-width: 526px) {
+    .latestNews {
+        &__item {
+            width: 100%;
+        }
+    }
+}
 
 // ---------- Ask a Question section begins ---------- //
 .askQuestion {
@@ -638,8 +645,8 @@ header {
         transform: translateY(-50%);
     }
     &__social {
-        @include position(absolute, 50%, 0, auto, auto);
-        transform: translateY(-50%);
+        @include position(absolute, auto, 0, 50%, auto);
+        transform: translateY(50%);
     }
     &__socialIcon {
         font-size: 2.5rem;
@@ -700,13 +707,16 @@ header {
         }
     }
 }
-@media (max-width: 500px) {
+@media (max-width: 526px) {
     .footer {
         position: relative;
         &__social {
-            width: 100%;
             right: 0;
-            // top: 100%;
+            bottom: 0;
+            transform: translateY(-50%);
+        }
+        &__socialList {
+            display: flex;
         }
     }
 }
